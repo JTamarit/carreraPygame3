@@ -35,6 +35,9 @@ class Game():
             theRunner.name = self.__names[i]
             self.runners.append(theRunner)
         
+    def close(self):
+        pygame.quit()
+        sys.exit()
         
     def competir(self):
         gameOver=False
@@ -42,9 +45,7 @@ class Game():
         while not gameOver:
             
             for event in pygame.event.get():
-                
                 if event.type == pygame.QUIT:
-                    
                     gameOVer = True
                     
             for activeRunner in self.runners:
@@ -62,8 +63,10 @@ class Game():
             
             pygame.display.flip()
             
-        pygame.quit()
-        sys.exit()
+        while True: #Para poder cerrar la ventana.
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.close()
     
     
     
