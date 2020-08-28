@@ -1,4 +1,15 @@
 import pygame, sys
+import random
+
+class Runner():
+    
+    def __init__(self, x=0, y=0):
+        self.custome =pygame.image.load("images/turtle.png")
+        self.position =(x, y)
+        self.name ="Tortuga"
+        
+    
+    
 
 class Game():
     runners=[] 
